@@ -2,9 +2,9 @@ import databasehandler
 from datetime import datetime
 
 # TEST AREA
-connection = databasehandler.create_connection()
-databasehandler.create_table(connection)
-databasehandler.total_students_year_get(connection)
+# connection = databasehandler.create_connection()
+# databasehandler.create_table(connection)
+# databasehandler.total_students_year_get(connection)
 
 # TEST AREA
 
@@ -58,7 +58,7 @@ def menu():
             print("Invalid response! Try again!")
 
 
-#menu()
+menu()
 
 
 # CLASS - NUM OF STUDENTS - TOTAL STUDENTS IN YEAR
