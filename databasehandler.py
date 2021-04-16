@@ -81,13 +81,14 @@ def total_students_year_get(connection):
         cur = connection.cursor()
         cur.execute("SELECT * FROM classes")
         classes_array = cur.fetchall()
-        print(classes_array)
+        print(classes_array)  # DEBUG CODE
         compressed_years = set()
+        # Compresses all tutor groups into their one year.
         for i in range(0, len(classes_array)):
-            if (classes_array[i][0][1]).isnumeric():
-                number = classes_array[i][0][0] + classes_array[i][0][1]
+            if (classes_array[i][0][1]).isnumeric():  # Checks for a second digit
+                number = classes_array[i][0][0] + classes_array[i][0][1]  # Adds the 2 digits to get the double digit number
             else:
-                number = classes_array[i][0][0]
+                number = classes_array[i][0][0]  # Single digit
             if number not in compressed_years:
                 compressed_years.add(number)
                 print(compressed_years)
@@ -96,7 +97,6 @@ def total_students_year_get(connection):
 # GOT ALL CLASSES YEARS INTO 1 NOW NEED TO GET NUM IN EACH YEAR ^u^
 
 
-# THIS PART BELOW IS KINDA NOT FINISHED AS IM STILL TRYING TO WORK SOMETHING OUT
 def get_classes(connection):
     with connection: 
         cur = connection.cursor()
